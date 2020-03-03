@@ -14,14 +14,17 @@ public class BackTracker
         {
             zeile++;
             erfolg = false;
+            for (int i = 0; i < spalte; i++) {
+                System.out.println(brett.letzteBelegteZeileInSpalte(i));
+            }
             if (brett.istSicherePosition(spalte, zeile))
             {
-                brett.setzeDameAufPosition(spalte, zeile);// toDo // zeichne Kandidaten auf
+                brett.setzeDameAufPosition(spalte, zeile); // zeichne Kandidaten auf
                 if (spalte < brett.anzahlZeilen())
                 {
-                    erfolg = versucheSpalte(spalte++);// toDo // versuche nächsten Schritt
+                    erfolg = versucheSpalte(spalte+1); // versuche nächsten Schritt
                     if (!erfolg){
-                        brett.entferneDameVonPosition(spalte, zeile);// toDo // lösche Aufzeichnung des Kandidaten
+                        brett.entferneDameVonPosition(spalte, zeile);// lösche Aufzeichnung des Kandidaten
                     }
                 } else
                 {
