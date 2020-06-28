@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Loesung des n-Damen-Problems mittels Backtracking
  */
